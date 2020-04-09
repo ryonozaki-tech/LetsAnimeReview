@@ -6,6 +6,7 @@
   .side_bar {
     width: 150px;
     background-color: cadetblue;
+    text-align: center;
     .genre_name {
       color: black;
       font-size: 25px;
@@ -50,6 +51,7 @@
           justify-content: space-between;
           padding: 10px;
           border-bottom: 1px solid white;
+          border-right: 1px solid white;
           
           .r_id {
             text-decoration: none;
