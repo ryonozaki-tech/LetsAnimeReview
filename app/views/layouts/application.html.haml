@@ -6,5 +6,14 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  .header
+    .theme
+      = link_to root_path, class: "theme__title" do
+        Let's Anime Review!!
+    .h_items
+    -#   = link_to new_user_registration_path, class: "h_items__left_btn" do
+    -#     新規登録
+    -#   = link_to new_user_session_path, class: "h_items__right_btn" do
+    -#     ログイン 
   %body
     = yield
