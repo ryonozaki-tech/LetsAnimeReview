@@ -42,7 +42,7 @@ Things you may want to cover:
 |review|text|null: false|
 |image|text||
 |user_id|references|null: false, foreign_key: true|
-|genre_id|references|null: false, foreign_key: true|
+<!-- |genre_id|references|null: false, foreign_key: true| -->
 ### Association
 - belongs_to :user
 - has_many :comments

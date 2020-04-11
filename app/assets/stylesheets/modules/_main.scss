@@ -30,13 +30,14 @@
   }
   .reviews {
     width: calc(100vw - 150px);
+    overflow: scroll;
     .review_th {
       height: 50px;
       font-weight: bold;
       font-size: 20px;
       text-align: center;
       line-height: 50px;
-      border: 1px solid white;
+      border: 1px solid black;
     }
     .review_box {
       border-right: 1px solid white;
@@ -91,6 +92,9 @@
       }
       .review {
         padding: 10px;
+      }
+      .review_image {
+        
       }
     }
   }
