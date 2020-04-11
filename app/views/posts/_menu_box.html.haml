@@ -13,8 +13,7 @@
     %input(type="submit" class="subumit" value="検索")
 - if user_signed_in?
   .post
-    = link_to "#", class: "post__btn" do
-      Let's Review!!
+    = link_to "Let's Review!!", new_post_path, class: "post__btn"
 - else
   .post
     = link_to "Let's Sign Up!!", new_user_registration_path, class: "post__btn"
