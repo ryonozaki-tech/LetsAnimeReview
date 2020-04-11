@@ -9,7 +9,6 @@
       width: 500px;
       margin: 0 auto;
       h3 {
-      
       }
       .title_field {
         display: block;
@@ -20,17 +19,38 @@
         display: block;
         width: 400px;
         height: 50px;
-       
       }
       .review_area {
         display: block;
         width: 400px;
         height: 300px;
-        
       }
       .submit {
         display: block;
-       
+      }
+    }
+    .edit_post {
+      width: 500px;
+      margin: 0 auto;
+      h3 {
+      }
+      .title_field {
+        display: block;
+        width: 400px;
+        height: 50px;
+      }
+      .image_field {
+        display: block;
+        width: 400px;
+        height: 50px;
+      }
+      .review_area {
+        display: block;
+        width: 400px;
+        height: 300px;
+      }
+      .submit {
+        display: block;
       }
     }
   }

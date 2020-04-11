@@ -1,0 +1,10 @@
+.contents.row
+  .container 
+    = form_for @post do |f|
+      %h3
+        投稿する
+      = f.text_field :title, class: "title_field", placeholder: "Anime Title"
+      = f.collection_check_boxes :genre_ids, Genre.all, :id, :name, class: "genre_check"
+      = f.text_field :image, class: "image_field", placeholder: "Image Url"
+      = f.text_area :review, class: "review_area", placeholder: "Review Text" , rows: "10"
+      = f.submit "SEND", class: "submit_btn"

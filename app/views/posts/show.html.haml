@@ -1,19 +1,6 @@
-.reviews
-  .review_th Reviews
-  .review_box
-    .r_data
-      .left_box
-        = link_to "No.#{@post[:id]}", "#", class: "r_id"
-        .r_title
-          = @post.title
-        - @post.genres.each do |p|
-          = link_to "#{p.name}", "#", class: "r_genre"
-        .r_star ⭐️⭐️⭐️⭐️
-      .right_box
-        = link_to "#{@post.user.nickname}", "#", class: "r_nickname"
-        .r_date
-          = @post.created_at.strftime("%Y/%m/%d/ %H:%M")
-    .review 
-      = @post.review
-    = image_tag @post.image, class: "review_image" if @post.image.present?
-    
+.wrapper
+  = render "menu_box"
+  .main
+    = render "side_bar"
+    = render "show"
+  
