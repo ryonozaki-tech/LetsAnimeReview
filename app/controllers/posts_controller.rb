@@ -13,7 +13,6 @@ class PostsController < ApplicationController
   def create
     # binding.pry
     @post = Post.new(post_params)
-    # Post.create(post_params)
     if @post.save
       redirect_to root_path
     else
@@ -24,6 +23,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @genres = Genre.all
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
 
   def edit

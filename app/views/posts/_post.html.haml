@@ -6,11 +6,11 @@
         .r_title
           = post.title
         - post.genres.each do |p|
-          = link_to "#{p.name}", "/genres/#{p.id}", class: "r_genre"
+          = link_to p.name, "/genres/#{p.id}", class: "r_genre"
         .r_star ⭐️⭐️⭐️⭐️
       .right_box
         .r_nickname
-          = link_to "#{post.user.nickname}", "/users/#{post.user.id}", class: "r_nickname"
+          = link_to post.user.nickname, "/users/#{post.user.id}", class: "r_nickname"
         .r_date
           = post.created_at.strftime("%Y/%m/%d/ %H:%M")
     .review 
