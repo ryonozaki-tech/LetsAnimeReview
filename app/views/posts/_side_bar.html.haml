@@ -3,25 +3,3 @@
   .genres
     - @genres.each do |genre|
       = link_to "#{genre.name}", "/genres/#{genre.id}", class: 'genre_box'
-
-
-      -# = link_to "#{genre.name}", class: "genre_box"
-      -# #{genre.name}
-      
--#  - @genres.each do
--# 引数は2つ(genre_idとpost_id)
-
-
-  -# .genres
-  -#   = link_to "#", class: "genre_box" do
-  -#     恋愛
-  -#   = link_to "#", class: "genre_box" do
-  -#     ギャグ
-  -#   = link_to "#", class: "genre_box" do
-  -#     SF
-  -#   = link_to "#", class: "genre_box" do
-  -#     ホラー
-  -#   = link_to "#", class: "genre_box" do
-  -#     アクション
-  -#   = link_to "#", class: "genre_box" do
-  -#     シリアス
