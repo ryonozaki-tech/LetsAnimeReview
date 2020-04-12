@@ -2,7 +2,7 @@
   .genre_name genres
   .genres
     - @genres.each do |genre|
-      = link_to "#{genre.name}", "#", class: 'genre_box'
+      = link_to "#{genre.name}", "/genres/#{genre.id}", class: 'genre_box'
 
 
       -# = link_to "#{genre.name}", class: "genre_box"
