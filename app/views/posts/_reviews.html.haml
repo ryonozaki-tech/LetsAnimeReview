@@ -1,31 +1,3 @@
 .reviews
   .review_th Reviews
-  - @posts.each do |post|
-    .review_box
-      .r_data
-        .left_box
-          = link_to "No.#{post[:id]}", "/posts/#{post[:id]}", class: "r_id"
-          .r_title
-            = post.title
-          - post.genres.each do |p|
-            = link_to "#{p.name}", "#", class: "r_genre"
-          .r_star ⭐️⭐️⭐️⭐️
-        .right_box
-          = link_to "#{post.user.nickname}", "#", class: "r_nickname"
-          .r_date
-            = post.created_at.strftime("%Y/%m/%d/ %H:%M")
-      .review 
-        = post.review
-      = image_tag post.image, class: "review_image" if post.image.present?
-      -# - if current_user[:id] == post.user_id
-      -#   .review_ed_btn
-      -#     = link_to "編集", "/posts/#{post[:id]}/edit", class: "review_edit_btn"
-      -#     = link_to "削除", "/posts/#{post[:id]}", class: "review_destroy_btn", method: :delete
-
-      
-      -# .review_image{style: "background-image: url(#{post.image});"}
-
-
-      -# = image_tag "", class: "review__image"
-      -# {url:"https://cs1.anime.dmkt-sp.jp/anime_kv/img/11/16/8/11168_1_9_8b.png?1552446014000"}
-  
+  = render "post"

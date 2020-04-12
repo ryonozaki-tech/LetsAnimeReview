@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'posts/index'
   root "posts#index"
   
-  resources :genres, only: :index
+  resources :genres, only: [:index, :show]
   resources :posts
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
 end
