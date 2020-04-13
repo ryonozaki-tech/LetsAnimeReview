@@ -24,20 +24,24 @@
   .comment_space
     - if current_user
       .comment_title Let's Comment! 
-      = form_for ([@post, @comment]) do |f|
+      = form_for ([@post, @comment]), id: "new_comment" do |f|
         = f.text_area :text, class: "text_area", placeholder: "Comment Text"
         = f.submit "SEND", class: "submit_btn"
       
-      %h3 コメント一覧
-      
-      - if @comments.present?
-        - @comments.each do |comment|
-          .comment
-            .comment__text
-              = comment.text
-            .comment__data
-              = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "comment__data__nickname"
-              .comment__data__date
-                = comment.created_at.strftime("%Y/%m/%d/ %H:%M")
-      - else
-        %h2 コメントはありません
+      .comment_box
+        %h3 コメント一覧
+        - if @comments.present?
+          - @comments.each do |comment|
+            .comment
+              .comment__text
+                = comment.text
+              .comment__data
+                = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "comment__data__nickname"
+                .comment__data__date
+                  = comment.created_at.strftime("%Y/%m/%d/ %H:%M")
+              - if current_user.nickname = comment.user.nickname
+                -# = link_to "編集",  "/posts/#{@post.id}/comments/#{comment.id}/edit", class: "comment_edit_btn"
+                = link_to "削除", "/posts/#{@post.id}/comments/#{comment.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
+
+        -# - else
+        -#   %h2 コメントはありません
