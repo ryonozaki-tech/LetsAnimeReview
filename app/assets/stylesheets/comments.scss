@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment_space {
   text-align: center;
+  
   .comment_title {
     font-weight: bold;
     font-size: 30px;
@@ -43,27 +44,30 @@
     font-size: 20px;
     border-bottom: 1px solid #000066;
   }
-  .comment {
-    border-bottom: 1px solid #000066;
-    &__text {
-      font-size: 25px;
-    }
-    &__data {
-      // display: flex;
-      &__nickname {
-        text-decoration: none;
-        color: blue;
-        font-size: 20px;
+  .comment_box {
+    
+    .comment {
+      border-bottom: 1px solid #000066;
+      &__text {
+        font-size: 25px;
       }
-      
-      &__date {
-        font-size: 15px;
+      &__data {
+        // display: flex;
+        &__nickname {
+          text-decoration: none;
+          color: blue;
+          font-size: 20px;
+        }
+        
+        &__date {
+          font-size: 15px;
+        }
       }
     }
-  }
-  h2 {
-    font-weight: bold;
-    height: 80px;
-    line-height: 80px;
+    h2 {
+      font-weight: bold;
+      height: 80px;
+      line-height: 80px;
+    }
   }
 }

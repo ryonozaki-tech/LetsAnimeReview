@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   has_many :genre_posts, dependent: :destroy
   has_many :genres, through: :genre_posts, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
   belongs_to :user
   with_options presence: true do
     validates :title, presence: true
