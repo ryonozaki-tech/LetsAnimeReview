@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-# Lets DB設計
+# LetsAnimeReview DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|

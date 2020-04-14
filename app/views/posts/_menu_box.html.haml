@@ -11,8 +11,11 @@
   -# .form
   -#   %input(type="search" class="search" placeholder="キーワードを入力してください")
   -#   %input(type="submit" class="subumit" value="検索")
-
-  -# = form_for @form url: search_posts_path, method: :get, class: "search-form" do |form|
+  = form_tag('/posts/search', method: :get, class: "form") do
+    = text_field_tag :keyword, :'', id:'searching-form', placeholder: 'キーワードを入力してください', autocomplete:'off'
+    = submit_tag "検索", class: "submit"
+  
+  -# = form_for post class: "search-form" do |form|
   -#   = form.text_field :keyword, placeholder: "投稿を検索する", class: "search"
   -#   = form.submit "検索", class: "subumit"
 
