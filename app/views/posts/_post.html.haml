@@ -7,7 +7,19 @@
           = post.title
         - post.genres.each do |p|
           = link_to p.name, "/genres/#{p.id}", class: "r_genre"
-        .r_star ⭐️⭐️⭐️⭐️
+        .r_star 
+          = "評価: #{post[:rate]}点"
+        %div{id: "star-rate-#{post.id}"}
+        :javascript
+          $('#star-rate-#{post.id}').raty({
+            size: 36,
+            starOff:  '#{asset_digest_path('star-off.png')}',
+            starOn : '#{asset_digest_path('star-on.png')}',
+            starHalf: '#{asset_digest_path('star-half.png')}',
+            half: true,
+            readOnly: true,
+            score: "#{post[:rate]}",
+          });
       .right_box
         .r_nickname
           = link_to post.user.nickname, "/users/#{post.user.id}", class: "r_nickname"
@@ -20,3 +32,6 @@
       .review_ed_btn
         = link_to "編集", "/posts/#{post.id}/edit", class: "review_edit_btn"
         = link_to "削除", "/posts/#{post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
+
+
+        

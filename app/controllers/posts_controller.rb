@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @genres = Genre.all
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.all.includes(:user).order("created_at DESC")
     respond_to do |format|
       format.html
       format.json
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   def create
     # binding.pry
     @post = Post.new(post_params)
+    # @post.create
     if @post.save
       redirect_to root_path
     else
@@ -47,6 +48,7 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
+    # binding.pry
     post.destroy
     redirect_to root_path
   end
@@ -58,8 +60,15 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :image, :review, genre_ids: []).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :rate, :image, :review, genre_ids: []).merge(user_id: current_user.id)
+    # params.permit(:rate)
   end
+
+  # def post_rate_params
+  #   params.permit(:rate)
+    # { rate: params[:rate]}
+    # { shipping_method_id: params[:shipping_method_id]}
+  # end
 
   def set_post
     @post = Post.find(params[:id])
