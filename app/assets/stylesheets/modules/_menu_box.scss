@@ -3,15 +3,16 @@
   background-color: rgb(169, 233, 214);
   display: flex;
   justify-content: space-between;
-  line-height: 50px;
+  line-height: 60px;
   position: fixed;
   // z-index: 1;
   box-shadow: 2px 2px 3px gray;
   
   .menu_items {
-    height: 50px;
-    width: calc(100vw - 300px);
+    height: 60px;
+    width: calc(100vw - 400px);
     display: flex;
+    line-height: 60px;
     .menu_item {
       color: $header_font_color;
       text-decoration: none;
@@ -20,16 +21,16 @@
     }
   }
   .form {
-    width: 300px;
+    width: 400px;
     text-align: center;
-    // .search {
-    //   padding: 10px;
-    // }
-    .search-input {
-      
+    #searching-form {
+      width: 300px;
+      padding: 5px;
+      // margin: 10px;
     }
     .search-btn {
-
+      width: 50px;
+      // padding: 20px;
     }
   }
 }

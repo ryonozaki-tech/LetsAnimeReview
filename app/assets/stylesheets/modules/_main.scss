@@ -33,17 +33,92 @@
     width: calc(100vw - 150px);
     overflow: scroll;
     .review_th {
-      height: 50px;
+      height: 60px;
       font-weight: bold;
       font-size: 30px;
       text-align: center;
-      line-height: 50px;
+      line-height: 60px;
       border: 1px solid black;
     }
     h1 {
       text-align: center;
       font-size: 20px;
     }
+    
+    /* radio non-display */
+    .container .radio {
+      display: none;
+    }
+    /* tabs position */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      // position: relative;
+      .title1, .body1 {
+        border: 2px solid rgb(127, 194, 239);
+        width: 50%;
+      }
+      .title2, .body2 {
+        border: 2px solid rgb(73, 218, 243);
+        width: 50%;
+      }
+      .tab-title {
+        border-bottom: none;
+        padding: .3em .5em;
+        border-radius: .3em .3em 0 0;
+        text-align: center;
+        display: table;
+        padding: 15px 0;
+      }
+      .tab-body > div {
+        width: 100%;
+        height: 100%;
+        border-radius: 0 .3em .3em .3em;
+        padding: 1em;
+      }
+    }
+    .container::after {
+      content: "";
+      width: 100%;
+    }
+    .container .tab-title {
+      position: relative;
+      border-bottom: 2px solid transparent;
+      top: 2px;
+      left: 2px;
+    }
+    .container .tab-title:hover {
+      cursor: pointer;
+    }
+    .container .tab-body {
+      order: 1;
+    }
+      /* tab's body init */
+      .add-control .tab-body > div {
+      display: none;
+
+    }
+
+    /* selected tab's color change */
+    .add-control .radio:checked + .tab-title {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+    .add-control #tab1:checked ~ .title1 {
+      background: rgba(127, 194, 239, .5);
+    }
+    .add-control #tab2:checked ~ .title2 {
+      background: rgba(79, 175, 1, 0.5);
+    }
+    /* tabs control */
+    .add-control #tab1:checked ~ .tab-body > .body1 {
+      display: block;
+    }
+    .add-control #tab2:checked ~ .tab-body > .body2 {
+      display: block;
+    }
+
+
     .review_box {
       border-right: 1px solid white;
       border-left: 1px solid white;
@@ -99,7 +174,7 @@
         padding: 10px;
       }
       .review_image {
-        
+        width: 30vw;
       }
       // .review_ed_btn {
       //   display: flex;
