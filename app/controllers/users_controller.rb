@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
   def show
-    user = User.find(params[:id])
-    @nickname = user.nickname
-    @posts = user.posts.order("created_at DESC")
+    @user = User.find(params[:id])
+    @nickname = @user.nickname
+    @posts = @user.posts.order("created_at DESC")
     @genres = Genre.all
+    @like_posts = Post.all.order("created_at DESC")
+    # likes = Like.all
+    # if user.id == likes.user_id
+    #   @like_posts = Post.(likes.post_ids[])
+    # end
     # .page(params[:page]).per(5).order("created_at DESC")
   end
 

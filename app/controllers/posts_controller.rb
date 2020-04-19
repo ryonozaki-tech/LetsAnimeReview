@@ -50,7 +50,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     # binding.pry
     post.destroy
-    redirect_to root_path
+    redirect_to :back
   end
 
   def search
