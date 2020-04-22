@@ -16,12 +16,28 @@
         width: 400px;
         height: 50px;
       }
-      // // .genre_check {
-      // #post_genre_ids_1 {
-      //   padding-right: 5px;
-      // }
-        
-      // }
+      .genre_check_boxes input[type="checkbox"] {
+        // width         : 17pt;
+        height        : 17pt;
+        vertical-align: top;
+      }
+       /* --- チェックボックス直後のlabel --- */
+       .genre_check_boxes input[type="checkbox"] + label {
+        padding       : 0 2px;
+        border        : 3px solid rgba(0, 0, 0, 0); /* labelの枠線 */
+        border-radius : 5px;                        /* labelの角丸 */
+        cursor        : pointer;                    /* カーソル設定 */
+        transition    : .2s;                        /* なめらか変化 */
+      }
+       /* --- 選択されたチェックボックス直後のlabel --- */
+       .genre_check_boxes input[type="checkbox"]:checked + label {
+        border        : 3px solid rgba(255, 255, 255, 0.10); /* labelの枠線 */
+      }
+       /* --- チェックボックス直後のlabelにマウスが乗った --- */
+       .genre_check_boxes input[type="checkbox"] + label:hover {
+        background    : rgba(255, 255, 255, 0.40);     /* lebelの背景 */
+      }
+      
       .image_field {
         display: block;
         width: 400px;

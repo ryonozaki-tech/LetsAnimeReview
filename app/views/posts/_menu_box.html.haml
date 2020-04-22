@@ -1,24 +1,42 @@
 .menu_box
   .menu_items 
-    = link_to "#", class: "menu_item" do
-      ⭐️ランキング
-    = link_to "#", class: "menu_item" do
-      review多いランキング
-    = link_to "#", class: "menu_item" do
-      ⭐️⭐️
-    = link_to "#", class: "menu_item" do
-      ◎⭐️
-  -# .form
-  -#   %input(type="search" class="search" placeholder="キーワードを入力してください")
-  -#   %input(type="submit" class="subumit" value="検索")
+    %ul
+      %li
+        = button_to "/posts/star_ranking", method: :get, class: "menu_item" do
+          評価ランキング
+      %li
+        = button_to "/posts/like_ranking", method: :get, class: "menu_item" do
+          いいね！ランキング
+      = select_tag :genre_id, options_from_collection_for_select(Genre.all, :id, :name) do
+      - @genres.each do |genre|
+        %li
+        = button_to "#{genre.name}ランキング", "/genres/#{genre.id}/each_genre_ranking", method: :get, class: "menu_item genres"
+      -# = form_for @genre do |f|
+      -#   = f.label :genre_id, "ジャンル選択"
+      -#   = f.select :genre_id, Genre.all.map { |genre| [genre.name, genre.id] }, class: 'post_content__genre-form'
+      -# - @genres.each do |genre|
+      -#   %select{:name => "”month”"}
+      -#     %option{:value => "#{genre.id}"} #{genre.name}
+
+
+
   = form_tag('/posts/search', method: :get, class: "form") do
-    = text_field_tag :keyword, :'', id:'searching-form', placeholder: 'タイトル名を入力してください', autocomplete:'off'
+    = text_field_tag :keyword, :'', id:'searching-form', placeholder: 'タイトル名のキーワードを入力！', autocomplete:'off'
     = submit_tag "検索", class: "search-btn"
-  
-  
+
+
 - if user_signed_in?
   .post
     = link_to "Let's Review!!", new_post_path, class: "post__btn"
 - else
   .post
     = link_to "Let's Sign Up!!", new_user_registration_path, class: "post__btn"
+
+    -# = submit_tag "検索", class: "search-btn"
+        -# = form_tag('/genres/#{genre.id}/each_genre_ranking', method: :get, action: :each_genre_ranking, class: "form") do
+        -# = form_tag({ :controller => 'genres', :action => 'each_genre_ranking' }, { :method => :get}) do
+    
+    
+        -# = form_for @genre do |f|
+        -#   = f.label :genre_id
+        -#   = f.collection_select :genre_id, Genre.all, :id, :name

@@ -11,7 +11,7 @@ $(function() {
                     <div class="comment__data__date">
                     ${comment.created_at}
                     </div>
-                    <a class="review_destroy_btn" rel="nofollow" data-method="delete" href="/comments/${comment.id}">
+                    <a class="review_destroy_btn" rel="nofollow" data-method="delete", data-confirm='削除しますか？', href="/comments/${comment.id}">
                     削除
                     </a>
                   </div>

@@ -1,6 +1,6 @@
 .main {
   height: 1000px;
-  background-color: rgb(178, 250, 223);
+  background-color: $main_bcolor;
   display: flex;
   // padding-top: 250px;
   .side_bar {
@@ -24,8 +24,8 @@
         padding: 20px;
       }
       .genre_box:hover {
-        color: rgb(171, 240, 171);
-        background-color: rgb(69, 131, 69);
+        color: $header_btn_hover_fcolor;
+        background-color: $header_btn_hover_bcolor;
       }
     }
   }
@@ -54,13 +54,27 @@
       display: flex;
       flex-wrap: wrap;
       // position: relative;
-      .title1, .body1 {
+      .title1 {
         border: 2px solid rgb(127, 194, 239);
         width: 50%;
+        box-shadow    : 3px 3px 3px #666666;
+        background-color: rgba(127, 194, 239, .5);
       }
-      .title2, .body2 {
+      .title1:active {
+        box-shadow    : none;
+        color         : #000066;
+        background    : #ffffff;
+      }
+      .title2 {
         border: 2px solid rgb(73, 218, 243);
         width: 50%;
+        box-shadow    : 3px 3px 3px #666666;
+        background-color: rgba(79, 175, 1, 0.5);
+      }
+      .title2:active {
+        box-shadow    : none;
+        color         : #000066;
+        background    : #ffffff;
       }
       .tab-title {
         border-bottom: none;
@@ -70,11 +84,17 @@
         display: table;
         padding: 15px 0;
       }
-      .tab-body > div {
+      .tab-body {
         width: 100%;
         height: 100%;
         border-radius: 0 .3em .3em .3em;
         padding: 1em;
+        .body1 {
+          width: 100%;
+        }
+        .body2 {
+          width: 100%;
+        }
       }
     }
     .container::after {
@@ -82,7 +102,6 @@
       width: 100%;
     }
     .container .tab-title {
-      position: relative;
       border-bottom: 2px solid transparent;
       top: 2px;
       left: 2px;
@@ -101,14 +120,14 @@
 
     /* selected tab's color change */
     .add-control .radio:checked + .tab-title {
-      color: #fff;
+      color: black;
       border-bottom-color: #fff;
     }
     .add-control #tab1:checked ~ .title1 {
-      background: rgba(127, 194, 239, .5);
+      background: $main_bcolor;
     }
     .add-control #tab2:checked ~ .title2 {
-      background: rgba(79, 175, 1, 0.5);
+      background: $main_bcolor;
     }
     /* tabs control */
     .add-control #tab1:checked ~ .tab-body > .body1 {
@@ -176,9 +195,30 @@
       .review_image {
         width: 30vw;
       }
-      // .review_ed_btn {
-      //   display: flex;
-      // }
+      .review_ed_btn {
+        .review_edit_btn {
+          text-decoration: none;
+          color: blue;
+        }
+        .review_destroy_btn {
+          text-decoration: none;
+          color: blue;
+        }
+      }
+      .fas.fa-heart {
+        color: plum;
+      }
+      .like_delete a {
+        text-decoration: none;
+        color: black;
+      }
+      .far.fa-heart {
+        color: plum;
+      }
+      .like_post a {
+        text-decoration: none;
+        color: black;
+      }
     }
   }
 }
