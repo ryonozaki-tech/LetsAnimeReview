@@ -34,7 +34,7 @@
         = link_to "削除", "/posts/#{@post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
 
 
-    %div{:id => "like-#{post.id}"}
+    %div{:id => "like-#{@post.id}"}
       = render partial: "likes/like", locals: { post: @post }
 
 
