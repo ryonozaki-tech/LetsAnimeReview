@@ -1,21 +1,21 @@
 .menu_box
   .menu_items 
-    = link_to "#", class: "menu_item" do
-      ⭐️ランキング
-    = link_to "#", class: "menu_item" do
-      review多いランキング
-    = link_to "#", class: "menu_item" do
-      ⭐️⭐️
-    = link_to "#", class: "menu_item" do
-      ◎⭐️
-  -# .form
-  -#   %input(type="search" class="search" placeholder="キーワードを入力してください")
-  -#   %input(type="submit" class="subumit" value="検索")
+    %ul
+      %li
+        = button_to "/posts/star_ranking", method: :get, class: "menu_item" do
+          評価ランキング
+      %li
+        = button_to "/posts/like_ranking", method: :get, class: "menu_item" do
+          いいね！ランキング
+        
+      - @genres.each do |genre|
+        %li
+        = button_to "#{genre.name}ランキング", "/genres/#{genre.id}/each_genre_ranking", method: :get, class: "menu_item genres"
+
   = form_tag('/posts/search', method: :get, class: "form") do
-    = text_field_tag :keyword, :'', id:'searching-form', placeholder: 'タイトル名を入力してください', autocomplete:'off'
+    = text_field_tag :keyword, :'', id:'searching-form', placeholder: 'タイトル名のキーワードを入力！', autocomplete:'off'
     = submit_tag "検索", class: "search-btn"
-  
-  
+
 - if user_signed_in?
   .post
     = link_to "Let's Review!!", new_post_path, class: "post__btn"

@@ -5,22 +5,14 @@ class PostsController < ApplicationController
   def index
     @genres = Genre.all
     @posts = Post.all.includes(:user).order("created_at DESC")
-    respond_to do |format|
-      format.html
-      format.json
-    end
-    # @users = User.all
   end
 
   def new
     @post = Post.new
-    # @genres = Genre.all
   end
 
   def create
-    # binding.pry
     @post = Post.new(post_params)
-    # @post.create
     if @post.save
       redirect_to root_path
     else
@@ -48,7 +40,6 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    # binding.pry
     post.destroy
     redirect_to :back
   end
@@ -58,22 +49,24 @@ class PostsController < ApplicationController
     @genres = Genre.all
   end
 
-  private
-  def post_params
-    params.require(:post).permit(:title, :rate, :image, :review, genre_ids: []).merge(user_id: current_user.id)
-    # params.permit(:rate)
+  def star_ranking
+    @genres = Genre.all
+    @posts = Post.all.includes(:user).order("rate DESC")
+  end
+  
+  def like_ranking
+    @genres = Genre.all
+    @posts = Post.all.includes(:user).order("likes_count DESC")
   end
 
-  # def post_rate_params
-  #   params.permit(:rate)
-    # { rate: params[:rate]}
-    # { shipping_method_id: params[:shipping_method_id]}
-  # end
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :rate, :image, :review, genre_ids: []).merge(user_id: current_user.id)
+  end
 
   def set_post
     @post = Post.find(params[:id])
   end
-end
 
-# , genre_posts_id: genre.id
-# , :post[genre_id][]
+end

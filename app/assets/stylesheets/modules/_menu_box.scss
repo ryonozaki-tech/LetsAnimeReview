@@ -13,11 +13,35 @@
     width: calc(100vw - 400px);
     display: flex;
     line-height: 60px;
-    .menu_item {
-      color: $header_font_color;
-      text-decoration: none;
-      font-size: 14px;
-      margin: 0 2%;
+    
+    ul {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      .menu_item {
+        color: $header_font_color;
+        margin: 0 5px;
+        font-size: 14px;
+        width: 200px;
+        display       : inline-block;
+        border-radius : 5%;
+        text-align    : center;
+        cursor        : pointer;
+        padding       : 5px 5px;
+        color         : $header_font_color;
+        line-height   : 1em;
+        transition    : .3s;
+        box-shadow    : 2px 2px 3px #666666;
+      }
+      .menu_item:hover {
+        box-shadow    : none;
+        color         : #cccccc;
+        background    : $header_font_color;
+      }
+      .genres {
+        // width: 120px;
+      }
     }
   }
   .form {
@@ -26,7 +50,6 @@
     #searching-form {
       width: 300px;
       padding: 5px;
-      // margin: 10px;
     }
     .search-btn {
       width: 50px;
@@ -36,7 +59,8 @@
 }
 
 .post {
-  padding-top: 150px;
+  padding-top: 165px;
+  padding-bottom: 5px;
   // height: 100px;
   background-color: rgb(226, 245, 214);
   text-align: center;

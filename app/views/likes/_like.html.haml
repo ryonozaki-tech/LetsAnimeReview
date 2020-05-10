@@ -1,18 +1,16 @@
 - if user_signed_in?
   - if post.like_user?(current_user.id)
-    %p 
-      = link_to "/posts/#{post.id}/likes", method: :delete do
+    .like_delete 
+      = link_to "/posts/#{post.id}/likes", method: :delete, remote: true do
         %i.fas.fa-heart
-        %span
-        = "#{post.likes.count}"
+        %span #{post.likes.count}
   - else
-    %p
-      = link_to "/posts/#{post.id}/likes", method: :post do
+    .like_post
+      = link_to "/posts/#{post.id}/likes", method: :post, remote: true do
         %i.far.fa-heart
-        %span
-        = "#{post.likes.count}"
-        -# , remote: true
+        %span #{post.likes.count}
+        
 - else
-  %p
+  .unlogin_like
     %i.far.fa-heart
     = "#{post.likes.count}"
