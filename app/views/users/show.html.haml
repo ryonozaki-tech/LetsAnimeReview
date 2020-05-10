@@ -58,5 +58,5 @@
                     .like_button
                       = render partial: "likes/like", locals: { post: post }
 
-                -# - else 
-                -#   いいね登録がありません
+                - else 
+                  %h1 いいね登録がありません
