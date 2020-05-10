@@ -51,12 +51,12 @@
                     .review 
                       = post.review
                     = image_tag post.image, class: "review_image" if post.image.present?
-                    - if user_signed_in? && current_user.id == post.user_id
-                      .review_ed_btn
-                        = link_to "編集", "/posts/#{post.id}/edit", class: "review_edit_btn"
-                        = link_to "削除", "/posts/#{post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
-                    .like_button
-                      = render partial: "likes/like", locals: { post: post }
+                    
+                    .review_ed_like_box
+                      %div{:id => "like-#{post.id}"}
+                        = render partial: "likes/like", locals: { post: post }
 
-                - else 
-                  %h1 いいね登録がありません
+                      - if user_signed_in? && current_user.id == post.user_id
+                        .review_ed_btn
+                          = link_to "編集", "/posts/#{post.id}/edit", class: "review_edit_btn"
+                          = link_to "削除", "/posts/#{post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete

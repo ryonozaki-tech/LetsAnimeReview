@@ -37,6 +37,7 @@
         .review 
           = @post.review
         = image_tag @post.image, class: "review_image" if @post.image.present?
+        
         .review_ed_like_box
           %div{:id => "like-#{@post.id}"}
             = render partial: "likes/like", locals: { post: @post }
