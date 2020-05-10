@@ -1,9 +1,8 @@
 .main {
-  height: 1000px;
   background-color: $main_bcolor;
   display: flex;
-  // padding-top: 250px;
   .side_bar {
+    padding-top: 165px;
     width: 150px;
     background-color: cadetblue;
     text-align: center;
