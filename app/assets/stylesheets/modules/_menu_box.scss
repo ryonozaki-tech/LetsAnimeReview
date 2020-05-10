@@ -1,12 +1,12 @@
 .menu_box {
   padding-top: 100px;
-  background-color: rgb(169, 233, 214);
+  background-color: $main_bcolor;
   display: flex;
   justify-content: space-between;
   line-height: 60px;
   position: fixed;
   // z-index: 1;
-  box-shadow: 2px 2px 3px gray;
+  box-shadow: 2px 2px 3px $box-shadow-color;
   
   .menu_items {
     height: 60px;
@@ -29,14 +29,13 @@
         text-align    : center;
         cursor        : pointer;
         padding       : 5px 5px;
-        color         : $header_font_color;
         line-height   : 1em;
         transition    : .3s;
-        box-shadow    : 2px 2px 3px #666666;
+        box-shadow    : 2px 2px 3px $box-shadow-color;
       }
       .menu_item:hover {
         box-shadow    : none;
-        color         : #cccccc;
+        color         : $header_btn_hover_fcolor;
         background    : $header_font_color;
       }
       .genres {
@@ -62,9 +61,9 @@
   padding-top: 165px;
   padding-bottom: 5px;
   // height: 100px;
-  background-color: rgb(226, 245, 214);
+  background-color: $header_btn_hover_fcolor;
   text-align: center;
-  
+  border-bottom: 1px solid $partition_color;
   &__btn {
     display: inline-block;
     padding: 0 20px;
@@ -72,14 +71,13 @@
     font-weight: bold;
     text-decoration: none;
     color: $header_font_color;
-    // border: 1px solid $header_font_color;
-    border-radius: 50%;
+    border-radius: 50px;
     transition: 0.3s;
     line-height: 100px;
     height: 100px;
   }
   &__btn:hover {
-    color: rgb(171, 240, 171);
-    background-color: rgb(69, 131, 69);
+    color: $header_btn_hover_fcolor;
+    background-color: $header_btn_hover_bcolor;
   }
 }

@@ -9,18 +9,18 @@
     text-align: center;
     overflow: scroll;
     .genre_name {
-      color: black;
+      color: $main-font-color;
       font-size: 25px;
       font-weight: bold;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid $header_BackgroundFont_color;
       padding: 20px;
     }
     .genres {
       .genre_box {
         display: block;
         text-decoration: none;
-        color: white;
-        border-bottom: 1px solid white;
+        color: $header_BackgroundFont_color;
+        border-bottom: 1px solid $header_BackgroundFont_color;
         padding: 20px;
       }
       .genre_box:hover {
@@ -38,7 +38,8 @@
       font-size: 30px;
       text-align: center;
       line-height: 60px;
-      border: 1px solid black;
+      border-top: 1px solid $partition_color;
+      border-bottom: 1px solid $partition_color;
     }
     h1 {
       text-align: center;
@@ -55,31 +56,29 @@
       flex-wrap: wrap;
       // position: relative;
       .title1 {
-        border: 2px solid rgb(127, 194, 239);
+        // border: 1px solid $header_btn_hover_bcolor;
         width: 50%;
-        box-shadow    : 3px 3px 3px #666666;
-        background-color: rgba(127, 194, 239, .5);
+        box-shadow    : 3px 3px 3px $box-shadow-color;
+        background-color: $userpage_IndexLike;
       }
       .title1:active {
         box-shadow    : none;
-        color         : #000066;
-        background    : #ffffff;
+        color         : $box-shadow-color;
+        background    : $header_BackgroundFont_color;
       }
       .title2 {
-        border: 2px solid rgb(73, 218, 243);
+        // border: 1px solid $header_btn_hover_bcolor;
         width: 50%;
-        box-shadow    : 3px 3px 3px #666666;
-        background-color: rgba(79, 175, 1, 0.5);
+        box-shadow    : 3px 3px 3px $box-shadow-color;
+        background-color: $userpage_IndexLike;
       }
       .title2:active {
         box-shadow    : none;
-        color         : #000066;
-        background    : #ffffff;
+        color         : $box-shadow-color;
+        background    : $header_BackgroundFont_color;
       }
       .tab-title {
         border-bottom: none;
-        padding: .3em .5em;
-        border-radius: .3em .3em 0 0;
         text-align: center;
         display: table;
         padding: 15px 0;
@@ -120,8 +119,8 @@
 
     /* selected tab's color change */
     .add-control .radio:checked + .tab-title {
-      color: black;
-      border-bottom-color: #fff;
+      color: $main-font-color;
+      border-bottom-color: $header_BackgroundFont_color;
     }
     .add-control #tab1:checked ~ .title1 {
       background: $main_bcolor;
@@ -139,9 +138,10 @@
 
 
     .review_box {
-      border-right: 1px solid white;
-      border-left: 1px solid white;
-      border-bottom: 1px solid white;
+      // border-right: 1px solid $header_BackgroundFont_color;
+      // border-left: 1px solid $header_BackgroundFont_color;
+      padding-right: 20px;
+      border-bottom: 1px solid $partition_color;
       .r_data {
         display: flex;
         justify-content: space-between;
@@ -150,25 +150,25 @@
           display: flex;
           justify-content: space-between;
           padding: 10px;
-          border-bottom: 1px solid white;
-          border-right: 1px solid white;
+          border-bottom: 1px solid $partition_color;
+          border-right: 1px solid $partition_color;
           
           .r_id {
             text-decoration: none;
-            color: black;
-            border-right: 1px solid white;
+            color: $main-font-color;
+            border-right: 1px solid $partition_color;
             padding-right: 5px;
           }
           .r_title {
             text-decoration: none;
-            color: black;
-            border-right: 1px solid white;
+            color: $main-font-color;
+            border-right: 1px solid $partition_color;
             padding: 0 5px;
           }
           .r_genre {
             text-decoration: none;
-            color: black;
-            border-right: 1px solid white;
+            color: $main-font-color;
+            border-right: 1px solid $partition_color;
             padding: 0 5px;
           }
           .r_star {
@@ -176,16 +176,17 @@
           }
         }
         .right_box {
-          border-left: 1px solid white;
-          border-bottom: 1px solid white;
-          
-          .r_nickname {
-            text-decoration: none;
-            color: black;
-            
+          border-left: 1px solid $partition_color;
+          border-bottom: 1px solid $partition_color;
+          .r_name {
+            .r_nickname {
+              text-decoration: none;
+              color: $main-font-color;
+              margin-left: 5px;
+            }
           }
           .r_date {
-
+            padding-left: 5px;
           }
         }
       }
@@ -196,28 +197,32 @@
         width: 30vw;
       }
       .review_ed_btn {
+        // margin-left: 10px;
+        float: right;
         .review_edit_btn {
           text-decoration: none;
-          color: blue;
+          color: $header_font_color;
         }
         .review_destroy_btn {
           text-decoration: none;
-          color: blue;
+          color: $header_font_color;
         }
       }
       .fas.fa-heart {
+        margin-left: 10px;
         color: plum;
       }
       .like_delete a {
         text-decoration: none;
-        color: black;
+        color: $main-font-color;
       }
       .far.fa-heart {
+        margin-left: 10px;
         color: plum;
       }
       .like_post a {
         text-decoration: none;
-        color: black;
+        color: $main-font-color;
       }
     }
   }
