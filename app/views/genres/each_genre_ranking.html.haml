@@ -2,6 +2,14 @@
   = render "posts/menu_box"
   .main
     = render "posts/side_bar"
-    .reviews
-      .review_th #{@g_name}アニメ星評価順ページ
-      = render 'show'
+    .reviewPostBox
+      - if user_signed_in?
+        .post
+          = link_to "Let's Review!!", new_post_path, class: "post__btn"
+      - else
+        .post
+          = link_to "Let's Sign Up!!", new_user_registration_path, class: "post__btn"
+      .reviews
+        .review_th #{@g_name}アニメ星評価順ページ
+        .review_boxes
+          = render 'show'

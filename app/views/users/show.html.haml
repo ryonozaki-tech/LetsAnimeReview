@@ -2,54 +2,61 @@
   = render "posts/menu_box"
   .main
     = render "posts/side_bar"
-    .reviews
-      .review_th #{@nickname}のページ
-      .container.add-control
-        %input#tab1.radio{:checked => "checked", :name => "tab", :type => "radio"}/
-        %label.tab-title.title1{:for => "tab1"} Review
-        %input#tab2.radio{:name => "tab", :type => "radio"}/
-        %label.tab-title.title2{:for => "tab2"} いいね！一覧
-        .tab-body
-          .body1
-            = render "posts/post"
-          .body2
-            - @like_posts.each do |post|
-              - if post.like_user?(@user.id)
-                .review_box
-                  .r_data
-                    .left_box
-                      = link_to "No.#{post.id}", "/posts/#{post.id}", class: "r_id"
-                      .r_title
-                        = post.title
-                      - post.genres.each do |p|
-                        = link_to p.name, "/genres/#{p.id}", class: "r_genre"
-                      .r_star 
-                        = "評価: #{post[:rate]}点"
-                      %div{id: "star-rate-#{post.id}"}
-                      :javascript
-                        $('#star-rate-#{post.id}').raty({
-                          size: 36,
-                          starOff:  '#{asset_digest_path('star-off.png')}',
-                          starOn : '#{asset_digest_path('star-on.png')}',
-                          starHalf: '#{asset_digest_path('star-half.png')}',
-                          half: true,
-                          readOnly: true,
-                          score: "#{post[:rate]}",
-                        });
-                    .right_box
-                      .r_nickname
-                        = link_to post.user.nickname, "/users/#{post.user.id}", class: "r_nickname"
-                      .r_date
-                        = post.created_at.strftime("%Y/%m/%d/ %H:%M")
-                  .review 
-                    = post.review
-                  = image_tag post.image, class: "review_image" if post.image.present?
-                  - if user_signed_in? && current_user.id == post.user_id
-                    .review_ed_btn
-                      = link_to "編集", "/posts/#{post.id}/edit", class: "review_edit_btn"
-                      = link_to "削除", "/posts/#{post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
-                  .like_button
-                    = render partial: "likes/like", locals: { post: post }
+    .reviewPostBox
+      - if user_signed_in?
+        .post
+          = link_to "Let's Review!!", new_post_path, class: "post__btn"
+      - else
+        .post
+          = link_to "Let's Sign Up!!", new_user_registration_path, class: "post__btn"
+      .reviews
+        .review_th #{@nickname}のページ
+        .container.add-control
+          %input#tab1.radio{:checked => "checked", :name => "tab", :type => "radio"}/
+          %label.tab-title.title1{:for => "tab1"} Review
+          %input#tab2.radio{:name => "tab", :type => "radio"}/
+          %label.tab-title.title2{:for => "tab2"} いいね！一覧
+          .tab-body
+            .body1
+              = render "posts/post"
+            .body2
+              - @like_posts.each do |post|
+                - if post.like_user?(@user.id)
+                  .review_box
+                    .r_data
+                      .left_box
+                        = link_to "No.#{post.id}", "/posts/#{post.id}", class: "r_id"
+                        .r_title
+                          = post.title
+                        - post.genres.each do |p|
+                          = link_to p.name, "/genres/#{p.id}", class: "r_genre"
+                        .r_star 
+                          = "評価: #{post[:rate]}点"
+                        %div{id: "star-rate-#{post.id}"}
+                        :javascript
+                          $('#star-rate-#{post.id}').raty({
+                            size: 36,
+                            starOff:  '#{asset_digest_path('star-off.png')}',
+                            starOn : '#{asset_digest_path('star-on.png')}',
+                            starHalf: '#{asset_digest_path('star-half.png')}',
+                            half: true,
+                            readOnly: true,
+                            score: "#{post[:rate]}",
+                          });
+                      .right_box
+                        .r_nickname
+                          = link_to post.user.nickname, "/users/#{post.user.id}", class: "r_nickname"
+                        .r_date
+                          = post.created_at.strftime("%Y/%m/%d/ %H:%M")
+                    .review 
+                      = post.review
+                    = image_tag post.image, class: "review_image" if post.image.present?
+                    - if user_signed_in? && current_user.id == post.user_id
+                      .review_ed_btn
+                        = link_to "編集", "/posts/#{post.id}/edit", class: "review_edit_btn"
+                        = link_to "削除", "/posts/#{post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
+                    .like_button
+                      = render partial: "likes/like", locals: { post: post }
 
-              -# - else 
-              -#   いいね登録がありません
+                -# - else 
+                -#   いいね登録がありません

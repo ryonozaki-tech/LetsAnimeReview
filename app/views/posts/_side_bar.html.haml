@@ -1,5 +1,5 @@
 .side_bar
-  .genre_name genres
+  .genre_name Genres
   .genres
     - @genres.each do |genre|
       = link_to "#{genre.name}", "/genres/#{genre.id}", class: 'genre_box'
