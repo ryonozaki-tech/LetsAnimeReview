@@ -1,62 +1,65 @@
 .reviews
   .review_th Review
-  .review_box
-    .r_data
-      .left_box
-        .r_id No.#{@post.id}
-        .r_title
-          = @post.title
-        - @post.genres.each do |p|
-          = link_to "#{p.name}", "/genres/#{p.id}", class: "r_genre"
-        .r_star 
-          = "評価: #{@post[:rate]}点"
-        %div{id: "star-rate-#{@post.id}"}
-        :javascript
-          $('#star-rate-#{@post.id}').raty({
-            size: 36,
-            starOff:  '#{asset_digest_path('star-off.png')}',
-            starOn : '#{asset_digest_path('star-on.png')}',
-            starHalf: '#{asset_digest_path('star-half.png')}',
-            half: true,
-            readOnly: true,
-            score: "#{@post[:rate]}",
-          });
-      .right_box
-        = link_to "#{@post.user.nickname}", "/users/#{@post.user.id}", class: "r_nickname"
-        .r_date
-          = @post.created_at.strftime("%Y/%m/%d/ %H:%M")
-    .review 
-      = @post.review
-    = image_tag @post.image, class: "review_image" if @post.image.present?
-    - if user_signed_in? && current_user.id == @post.user_id
-      .review_ed_btn
-        = link_to "編集", "/posts/#{@post.id}/edit", class: "review_edit_btn"
-        = link_to "削除", "/posts/#{@post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
+  .review_boxes
+    .review_box
+      .r_data
+        .left_box
+          .r_id No.#{@post.id}
+          .r_title
+            = @post.title
+          - @post.genres.each do |p|
+            = link_to "#{p.name}", "/genres/#{p.id}", class: "r_genre"
+          .r_star 
+            = "評価: #{@post[:rate]}点"
+          %div{id: "star-rate-#{@post.id}"}
+          :javascript
+            $('#star-rate-#{@post.id}').raty({
+              size: 36,
+              starOff:  '#{asset_digest_path('star-off.png')}',
+              starOn : '#{asset_digest_path('star-on.png')}',
+              starHalf: '#{asset_digest_path('star-half.png')}',
+              half: true,
+              readOnly: true,
+              score: "#{@post[:rate]}",
+            });
+        .right_box
+          .r_name
+            = link_to "#{@post.user.nickname}", "/users/#{@post.user.id}", class: "r_nickname"
+          .r_date
+            = @post.created_at.strftime("%Y/%m/%d/ %H:%M")
+      .review 
+        = @post.review
+      = image_tag @post.image, class: "review_image" if @post.image.present?
+      .review_ed_like_box
+        %div{:id => "like-#{@post.id}"}
+          = render partial: "likes/like", locals: { post: @post }
 
-    %div{:id => "like-#{@post.id}"}
-      = render partial: "likes/like", locals: { post: @post }
+        - if user_signed_in? && current_user.id == @post.user_id
+          .review_ed_btn
+            = link_to "編集", "/posts/#{@post.id}/edit", class: "review_edit_btn"
+            = link_to "削除", "/posts/#{@post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
 
-  .comment_space
-    - if current_user
-      .comment_title Let's Comment! 
-      = form_for ([@post, @comment]), id: "new_comment" do |f|
-        = f.text_area :text, class: "text_area", placeholder: "Comment Text"
-        = f.submit "SEND", class: "submit_btn"
-      
-      %h3 コメント一覧
-      .comment_box
-        - if @comments.present?
-          - @comments.reverse.each do |comment|
-            .comment
-              .comment__text
-                = comment.text
-              .comment__data
-                = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "comment__data__nickname"
-                .comment__data__date
-                  = comment.created_at.strftime("%Y/%m/%d/ %H:%M")
-              - if current_user.nickname == comment.user.nickname
-                = link_to "削除", "/comments/#{comment.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
-
-        -# - else
-        -#   %h2 コメントはありません
+    .comment_space
+      - if current_user
+        .comment_title Let's Comment! 
+        = form_for ([@post, @comment]), id: "new_comment" do |f|
+          = f.text_area :text, class: "text_area", placeholder: "Comment Text"
+          = f.submit "SEND", class: "submit_btn"
         
+        %h3 コメント一覧
+        .comment_box
+          - if @comments.present?
+            - @comments.reverse.each do |comment|
+              .comment
+                .comment__text
+                  = comment.text
+                .comment__data
+                  = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "comment__data__nickname"
+                  .comment__data__date
+                    = comment.created_at.strftime("%Y/%m/%d/ %H:%M")
+                - if current_user.nickname == comment.user.nickname
+                  = link_to "削除", "/comments/#{comment.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
+
+          -# - else
+          -#   %h2 コメントはありません
+          

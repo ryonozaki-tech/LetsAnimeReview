@@ -136,11 +136,14 @@
       display: block;
     }
 
-
+    .review_boxes {
+      padding: 1em;
+    }
     .review_box {
       // border-right: 1px solid $header_BackgroundFont_color;
       // border-left: 1px solid $header_BackgroundFont_color;
-      padding-right: 20px;
+      padding-right: 10px;
+      padding-bottom: 10px;
       border-bottom: 1px solid $partition_color;
       .r_data {
         display: flex;
@@ -196,33 +199,37 @@
       .review_image {
         width: 30vw;
       }
-      .review_ed_btn {
-        // margin-left: 10px;
-        float: right;
-        .review_edit_btn {
-          text-decoration: none;
-          color: $header_font_color;
+      .review_ed_like_box {
+        display: flex;
+        justify-content: space-between;
+        .review_ed_btn {
+          // margin-left: 10px;
+          // float: right;
+          .review_edit_btn {
+            text-decoration: none;
+            color: $header_font_color;
+          }
+          .review_destroy_btn {
+            text-decoration: none;
+            color: $header_font_color;
+          }
         }
-        .review_destroy_btn {
-          text-decoration: none;
-          color: $header_font_color;
+        .fas.fa-heart {
+          margin-left: 10px;
+          color: plum;
         }
-      }
-      .fas.fa-heart {
-        margin-left: 10px;
-        color: plum;
-      }
-      .like_delete a {
-        text-decoration: none;
-        color: $main-font-color;
-      }
-      .far.fa-heart {
-        margin-left: 10px;
-        color: plum;
-      }
-      .like_post a {
-        text-decoration: none;
-        color: $main-font-color;
+        .like_delete a {
+          text-decoration: none;
+          color: $main-font-color;
+        }
+        .far.fa-heart {
+          margin-left: 10px;
+          color: plum;
+        }
+        .like_post a {
+          text-decoration: none;
+          color: $main-font-color;
+        }
       }
     }
   }
