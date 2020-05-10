@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   devise_for :users
   # get 'posts/index'
   root "posts#index"
-  
-  resources :genres, only: [:index, :show] do
+
+  resources :genres, only: %i[index show] do
     member do
       get 'each_genre_ranking'
     end
   end
   resources :posts do
     resources :comments, only: :create
-    resource :likes, only: [:create, :destroy, :show]
+    resource :likes, only: %i[create destroy show]
     collection do
       get 'search'
     end
@@ -23,5 +23,5 @@ Rails.application.routes.draw do
     end
   end
   resources :comments, only: :destroy
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: %i[show edit update]
 end

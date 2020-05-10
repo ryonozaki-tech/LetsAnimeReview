@@ -5,16 +5,9 @@ class UsersController < ApplicationController
     @posts = @user.posts.order("created_at DESC")
     @genres = Genre.all
     @like_posts = Post.all.order("created_at DESC")
-    # likes = Like.all
-    # if user.id == likes.user_id
-    #   @like_posts = Post.(likes.post_ids[])
-    # end
-    # .page(params[:page]).per(5).order("created_at DESC")
   end
 
-  def edit
-    
-  end
+  def edit; end
 
   def update
     if current_user.update(user_params)
@@ -27,6 +20,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:nickname, :email)    
+    params.require(:user).permit(:nickname, :email)
   end
 end

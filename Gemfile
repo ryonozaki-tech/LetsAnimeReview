@@ -56,4 +56,4 @@ gem 'haml-rails'
 gem 'pry-rails'
 gem 'ratyrate'
 gem 'safe_attributes'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

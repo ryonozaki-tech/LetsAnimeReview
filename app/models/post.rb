@@ -17,7 +17,7 @@ class Post < ApplicationRecord
   def like_user?(user_id)
     likes.where(user_id: user_id).exists?
   end
-  
+
   def self.search(search)
     return Post.all unless search
 
