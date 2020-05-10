@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-
-  before_action :set_post, only: [:edit, :update, :show]
+  before_action :set_post, only: %i[edit update show]
 
   def index
     @genres = Genre.all
@@ -26,8 +25,7 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @post.update(post_params)
@@ -53,7 +51,7 @@ class PostsController < ApplicationController
     @genres = Genre.all
     @posts = Post.all.includes(:user).order("rate DESC")
   end
-  
+
   def like_ranking
     @genres = Genre.all
     @posts = Post.all.includes(:user).order("likes_count DESC")
@@ -68,5 +66,4 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
 end
