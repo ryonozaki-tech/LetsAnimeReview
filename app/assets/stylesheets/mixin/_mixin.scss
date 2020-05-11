@@ -1,3 +1,4 @@
+// 新規投稿、編集画面共通部分
 @mixin new_edit_form {
   width: 400px;
   margin: 0 auto;
@@ -84,16 +85,4 @@
   background-color: $header_btn_hover_bcolor;
   border: 1px solid $header_btn_hover_bcolor;
   box-shadow: none;
-}
-
-@mixin ne_ {
-  
-}
-
-@mixin ne_ {
-  
-}
-
-@mixin ne_ {
-  
 }
