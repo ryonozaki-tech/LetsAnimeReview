@@ -5,78 +5,93 @@
   .container {
     padding-top: 100px;
     
+    // 新規投稿画面
     .new_post {
-      width: 500px;
-      margin: 0 auto;
+      @include new_edit_form;
       h3 {
-        // text-align: center;
+        @include ne_h3;
       }
       .title_field {
-        display: block;
-        width: 400px;
-        height: 50px;
+        @include ne_title_field;
+      }
+      .form-group {
+        @include ne_form-group;
+      }
+      .genre_check_boxes {
+        @include ne_genre_check_boxes;
       }
       .genre_check_boxes input[type="checkbox"] {
-        // width         : 17pt;
-        height        : 17pt;
-        vertical-align: top;
+        @include ne_genre_check_boxes_input_c;
       }
        /* --- チェックボックス直後のlabel --- */
        .genre_check_boxes input[type="checkbox"] + label {
-        padding       : 0 2px;
-        border        : 3px solid rgba(0, 0, 0, 0); /* labelの枠線 */
-        border-radius : 5px;                        /* labelの角丸 */
-        cursor        : pointer;                    /* カーソル設定 */
-        transition    : .2s;                        /* なめらか変化 */
+        @include ne_genre_check_boxes_input_cl;
       }
        /* --- 選択されたチェックボックス直後のlabel --- */
        .genre_check_boxes input[type="checkbox"]:checked + label {
-        border        : 3px solid rgba(255, 255, 255, 0.10); /* labelの枠線 */
+        @include ne_genre_check_boxes_input_ccl;
       }
        /* --- チェックボックス直後のlabelにマウスが乗った --- */
        .genre_check_boxes input[type="checkbox"] + label:hover {
-        background    : rgba(255, 255, 255, 0.40);     /* lebelの背景 */
+        @include ne_genre_check_boxes_input_cl_hover;
       }
-      
       .image_field {
-        display: block;
-        width: 400px;
-        height: 50px;
+        @include ne_image_field;
       }
       .review_area {
-        display: block;
-        width: 400px;
-        height: 300px;
+        @include ne_review_area;
       }
-      .submit {
-        display: block;
+      .submit_btn {
+        @include ne_submit_btn;
+      }
+      .submit_btn:hover {
+        @include ne_submit_btn_hover;
       }
     }
+
+
+
+    // 編集画面
     .edit_post {
-      width: 500px;
-      margin: 0 auto;
+      @include new_edit_form;
       h3 {
-        // text-align: center;
+        @include ne_h3;
       }
       .title_field {
-        display: block;
-        width: 400px;
-        height: 50px;
+        @include ne_title_field;
       }
-      .genre_check {
-
+      .form-group {
+        @include ne_form-group;
+      }
+      .genre_check_boxes {
+        @include ne_genre_check_boxes;
+      }
+      .genre_check_boxes input[type="checkbox"] {
+        @include ne_genre_check_boxes_input_c;
+      }
+       /* --- チェックボックス直後のlabel --- */
+       .genre_check_boxes input[type="checkbox"] + label {
+        @include ne_genre_check_boxes_input_cl;
+      }
+       /* --- 選択されたチェックボックス直後のlabel --- */
+       .genre_check_boxes input[type="checkbox"]:checked + label {
+        @include ne_genre_check_boxes_input_ccl;
+      }
+       /* --- チェックボックス直後のlabelにマウスが乗った --- */
+       .genre_check_boxes input[type="checkbox"] + label:hover {
+        @include ne_genre_check_boxes_input_cl_hover;
       }
       .image_field {
-        display: block;
-        width: 400px;
-        height: 50px;
+        @include ne_image_field;
       }
       .review_area {
-        display: block;
-        width: 400px;
-        height: 300px;
+        @include ne_review_area;
       }
-      .submit {
+      .submit_btn {
+        @include ne_submit_btn;
+      }
+      .submit_btn:hover {
+        @include ne_submit_btn_hover;
       }
     }
   }
