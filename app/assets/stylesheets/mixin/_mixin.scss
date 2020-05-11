@@ -1,0 +1,99 @@
+@mixin new_edit_form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+@mixin ne_h3 {
+  padding: 10px 0 7px 5px;
+}
+
+@mixin ne_title_field {
+  width: 400px;
+  height: 50px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: 1px solid $header_BackgroundFont_color;
+  box-shadow    : 2px 2px 3px $box-shadow-color inset;
+}
+
+@mixin ne_form-group {
+  padding: 5px 5px 0 5px;
+}
+
+@mixin ne_genre_check_boxes {
+  width: 400px;
+}
+
+@mixin ne_genre_check_boxes_input_c {
+  height: 17pt;
+  vertical-align: top;
+}
+
+@mixin ne_genre_check_boxes_input_cl {
+  // padding       : 0 2px;
+  margin-right: 5px;
+  border        : 3px solid rgba(0, 0, 0, 0); /* labelの枠線 */
+  border-radius : 5px;                          /* labelの角丸 */
+  cursor        : pointer;                      /* カーソル設定 */
+  transition    : .2s;                          /* なめらか変化 */
+}
+
+@mixin ne_genre_check_boxes_input_ccl {
+  border        : 3px solid rgba(255, 255, 255, 0.10); /* labelの枠線 */
+}
+
+@mixin ne_genre_check_boxes_input_cl_hover  {
+  background    : rgba(255, 255, 255, 0.40);     /* lebelの背景 */
+}
+
+@mixin ne_image_field {
+  width: 400px;
+  height: 50px;
+  padding-left: 5px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid $header_BackgroundFont_color;
+  box-shadow: $newedit_form_box_shadow;
+}
+
+@mixin ne_review_area {
+  width: 400px;
+  height: 300px;
+  padding: 7px 0 0 5px;
+  border-radius: 5px;
+  border: 1px solid $header_BackgroundFont_color;
+  box-shadow: $newedit_form_box_shadow;
+}
+
+@mixin ne_submit_btn {
+  width: 400px;
+  border-radius: 0;
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  color: $header_font_color;
+  background-color: $partition_color;
+  border: 1px solid $main_bcolor;
+  border-radius: 5px;
+  transition: 0.3s;
+  box-shadow: $newedit_form_submit_shadow;
+}
+
+@mixin ne_submit_btn_hover {
+  color: $header_btn_hover_fcolor;
+  background-color: $header_btn_hover_bcolor;
+  border: 1px solid $header_btn_hover_bcolor;
+  box-shadow: none;
+}
+
+@mixin ne_ {
+  
+}
+
+@mixin ne_ {
+  
+}
+
+@mixin ne_ {
+  
+}
