@@ -19,6 +19,7 @@
           .tab-body
             .body1
               = render "posts/post"
+              = paginate(@posts)
             .body2
               - @like_posts.each do |post|
                 - if post.like_user?(@user.id)
