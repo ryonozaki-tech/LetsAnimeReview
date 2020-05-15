@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @genres = Genre.all
-    @posts = Post.all.includes(:user).order("created_at DESC")
+    @posts = Post.all.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
@@ -49,12 +49,12 @@ class PostsController < ApplicationController
 
   def star_ranking
     @genres = Genre.all
-    @posts = Post.all.includes(:user).order("rate DESC")
+    @posts = Post.all.includes(:user).order("rate DESC").page(params[:page]).per(10)
   end
 
   def like_ranking
     @genres = Genre.all
-    @posts = Post.all.includes(:user).order("likes_count DESC")
+    @posts = Post.all.includes(:user).order("likes_count DESC").page(params[:page]).per(10)
   end
 
   private

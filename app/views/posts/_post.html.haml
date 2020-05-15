@@ -36,3 +36,5 @@
         .review_ed_btn
           = link_to "編集", "/posts/#{post.id}/edit", class: "review_edit_btn"
           = link_to "削除", "/posts/#{post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
+
+= paginate(@posts)
