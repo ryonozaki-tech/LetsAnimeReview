@@ -86,3 +86,8 @@
   border: 1px solid $header_btn_hover_bcolor;
   box-shadow: none;
 }
+
+@mixin edit_destroy_pagination_btn {
+  text-decoration: none;
+  color: $header_font_color;
+}

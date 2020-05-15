@@ -19,6 +19,7 @@
           .tab-body
             .body1
               = render "posts/post"
+              = paginate(@posts)
             .body2
               - @like_posts.each do |post|
                 - if post.like_user?(@user.id)
@@ -44,7 +45,7 @@
                             score: "#{post[:rate]}",
                           });
                       .right_box
-                        .r_nickname
+                        .r_name
                           = link_to post.user.nickname, "/users/#{post.user.id}", class: "r_nickname"
                         .r_date
                           = post.created_at.strftime("%Y/%m/%d/ %H:%M")
@@ -60,3 +61,4 @@
                         .review_ed_btn
                           = link_to "編集", "/posts/#{post.id}/edit", class: "review_edit_btn"
                           = link_to "削除", "/posts/#{post.id}", data: { confirm: '削除しますか？' }, class: "review_destroy_btn", method: :delete
+              = paginate(@posts)

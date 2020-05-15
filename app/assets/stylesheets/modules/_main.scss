@@ -202,11 +202,10 @@
         .review_ed_btn {
           .review_edit_btn {
             text-decoration: none;
-            color: $header_font_color;
+            @include edit_destroy_pagination_btn;
           }
           .review_destroy_btn {
-            text-decoration: none;
-            color: $header_font_color;
+            @include edit_destroy_pagination_btn;
           }
         }
         .fas.fa-heart {
@@ -225,6 +224,27 @@
           text-decoration: none;
           color: $main-font-color;
         }
+      }
+    }
+    .pagination {
+      padding: 0 1em 1em;
+      span {
+        padding-right: 5px;
+      }
+      .page a{
+        @include edit_destroy_pagination_btn;
+      }
+      .first a{
+        @include edit_destroy_pagination_btn;
+      }
+      .prev a{
+        @include edit_destroy_pagination_btn;
+      }
+      .next a{
+        @include edit_destroy_pagination_btn;
+      }
+      .last a{
+        @include edit_destroy_pagination_btn;
       }
     }
   }
