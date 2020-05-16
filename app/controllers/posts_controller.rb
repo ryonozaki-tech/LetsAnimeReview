@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[edit update show]
+  before_action :set_post, only: [:edit, :update, :show]
+  # before_action :move_to_index, only: [:new, :edit]
 
   def index
     @genres = Genre.all
@@ -65,5 +66,9 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end
