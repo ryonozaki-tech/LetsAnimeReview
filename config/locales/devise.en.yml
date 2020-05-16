@@ -62,4 +62,6 @@ en:
       not_locked: "was not locked"
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
+        # one: "1件のエラーによりこのユーザーは保存できませんでした"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+        # other: "%{count}件のエラーによりこのユーザーは保存できませんでした"
