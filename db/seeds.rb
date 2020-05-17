@@ -19,21 +19,5 @@ Genre.create([{name: "恋愛"},
               {name: "学園"},
               {name: "青春"},
               {name: "バトル"},
-              {name: "サバイバル"}])
-
-
-# Genre.create!(name: "恋愛")
-# Genre.create!(name: "ギャグ")
-# Genre.create!(name: "SF")
-# Genre.create!(name: "ホラー")
-# Genre.create!(name: "アクション")
-# Genre.create!(name: "ミステリー")
-# Genre.create!(name: "悲劇")
-# Genre.create!(name: "歴史・未来")
-# Genre.create!(name: "冒険")
-# Genre.create!(name: "スポーツ")
-# Genre.create!(name: "学園")
-# Genre.create!(name: "青春")
-# Genre.create!(name: "バトル")
-# Genre.create!(name: "サバイバル")
-# Genre.create!(name: "劇場版")
+              {name: "サバイバル"},
+              {name: "劇場版"}])
