@@ -26,7 +26,8 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @post.update(post_params)
