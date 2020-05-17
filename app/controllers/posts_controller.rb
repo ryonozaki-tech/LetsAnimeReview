@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :show]
-  # before_action :move_to_index, only: [:new, :edit]
+  before_action :move_to_index, only: [:new, :edit]
 
   def index
     @genres = Genre.all

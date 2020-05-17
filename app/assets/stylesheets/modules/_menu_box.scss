@@ -49,10 +49,17 @@
     #searching-form {
       width: 300px;
       padding: 5px;
+      border-radius: 5px;
+      border: 1px solid $header_BackgroundFont_color;
+      box-shadow: $newedit_form_box_shadow;
     }
     .search-btn {
+      @include ne_submit_btn;
       width: 50px;
-      // padding: 20px;
+      padding: 3px;
+    }
+    .search-btn:hover {
+      @include ne_submit_btn_hover;
     }
   }
 }
