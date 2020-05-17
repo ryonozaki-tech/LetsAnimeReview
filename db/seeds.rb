@@ -19,8 +19,7 @@ Genre.create([{name: "恋愛"},
               {name: "学園"},
               {name: "青春"},
               {name: "バトル"},
-              {name: "サバイバル"},
-              {name: "劇場版"}])
+              {name: "サバイバル"}])
 
 
 # Genre.create!(name: "恋愛")
