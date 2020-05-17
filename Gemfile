@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -65,3 +66,7 @@ gem 'ratyrate'
 gem 'safe_attributes'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'kaminari'
+
+group :production do
+  gem 'pg'
+end
