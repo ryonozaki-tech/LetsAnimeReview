@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # アプリ名：Let's Anime Review!!
 
 # このアプリでできること
@@ -48,7 +25,7 @@ Things you may want to cover:
 - 抱いた感想を他のユーザーと共有し、輪を広げるため
 - 他のユーザーの感想を見ることで新しい見方や着想を得るため
 
-# ビューイメージ
+# DEMO
 ### ログインから投稿の流れ
  [![Image from Gyazo](https://i.gyazo.com/794d9e5526f683f1c9661e5c8a6b4cd3.gif)](https://gyazo.com/794d9e5526f683f1c9661e5c8a6b4cd3)
  
@@ -58,7 +35,6 @@ Things you may want to cover:
 # 実装予定の内容
 - APIを用いて作品を選択させ、評価の平均値を算出し、ランキング化
 - フォロー機能で、他ユーザーに干渉されない1対1のコミュニケーションの場を設置
-
 
 # DB設計
 ## usersテーブル
