@@ -18,6 +18,10 @@
       text-decoration: none;
       color: $header_font_color;
     }
+    &__title:hover {
+      color: $userpage_IndexLike;
+      transition: 0.3s;
+    }
   }
   .h_items {
     width: 300px;
@@ -27,40 +31,17 @@
     margin-right: 30px;
     display: flex;
     justify-content: center;
-    
     &__left_btn {
-      padding: 0 20px;
-      margin-right: 20px;
-      text-decoration: none;
-      color: $header_font_color;
-      background-color: $partition_color;
-      border: 1px solid $main_bcolor;
-      border-radius: 10px;
-      transition: 0.3s;
-      box-shadow    : 2px 2px 3px $box-shadow-color;
+      @include header_btn;
     }
     &__left_btn:hover {
-      color: $header_btn_hover_fcolor;
-      background-color: $header_btn_hover_bcolor;
-      border: 1px solid $header_btn_hover_bcolor;
-      box-shadow    : none;
+      @include header_btn_hover;
     }
     &__right_btn {
-      padding: 0 20px;
-      margin-right: 20px;
-      text-decoration: none;
-      color: $header_font_color;
-      background-color: $partition_color;
-      border: 1px solid $main_bcolor;
-      border-radius: 10px;
-      transition: 0.3s;
-      box-shadow    : 2px 2px 3px $box-shadow-color;
+      @include header_btn;
     }
     &__right_btn:hover {
-      color: $header_btn_hover_fcolor;
-      background-color: $header_btn_hover_bcolor;
-      border: 1px solid $header_btn_hover_bcolor;
-      box-shadow    : none;
+      @include header_btn_hover;
     }
   }
 }
