@@ -26,7 +26,7 @@ Things you may want to cover:
 # アプリ名：Let's Anime Review!!
 
 # このアプリでできること
-## 未ログイン時
+### 未ログイン時
 - 他のユーザーの感想の閲覧
 - ジャンル別の投稿一覧
 - 5段階評価でのランキング閲覧(総合、ジャンル別ページあり)
@@ -35,7 +35,7 @@ Things you may want to cover:
 - 投稿のタイトル検索
 - ユーザー登録
 
-## ログイン時
+### ログイン時
 - 自分が見たアニメの感想を投稿
 - 投稿主なら編集・削除
 - いいね機能で気になる作品をマイページのいいね一覧に保存・削除
@@ -49,10 +49,10 @@ Things you may want to cover:
 - 他のユーザーの感想を見ることで新しい見方や着想を得るため
 
 # ビューイメージ
-## ログインから投稿の流れ
+### ログインから投稿の流れ
  [![Image from Gyazo](https://i.gyazo.com/794d9e5526f683f1c9661e5c8a6b4cd3.gif)](https://gyazo.com/794d9e5526f683f1c9661e5c8a6b4cd3)
  
-## 投稿をいいねしてマイページに表示、削除の流れ
+### 投稿をいいねしてマイページに表示、削除の流れ
 [![Image from Gyazo](https://i.gyazo.com/b8e442eae9884f068100003ecbf6b007.gif)](https://gyazo.com/b8e442eae9884f068100003ecbf6b007)
  
 # 実装予定の内容
