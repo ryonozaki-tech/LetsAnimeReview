@@ -85,9 +85,15 @@
   background-color: $header_btn_hover_bcolor;
   border: 1px solid $header_btn_hover_bcolor;
   box-shadow: none;
+  transition: 0.3s;
 }
 
 @mixin edit_destroy_pagination_btn {
   text-decoration: none;
   color: $header_font_color;
+}
+
+@mixin review_a_hover {
+  color: $review_hover_color;
+  transition: 0.3s;
 }
