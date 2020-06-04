@@ -5,9 +5,8 @@
   justify-content: space-between;
   line-height: 60px;
   position: fixed;
-  // z-index: 1;
   box-shadow: 2px 2px 3px $box-shadow-color;
-  
+
   .menu_items {
     height: 60px;
     width: calc(100vw - 400px);
@@ -22,10 +21,12 @@
       .menu_item {
         color: $header_font_color;
         margin: 0 5px;
+        border-width: 1px;
+        border-color: $box-shadow-color;
         font-size: 14px;
         width: 200px;
         display       : inline-block;
-        border-radius : 5%;
+        border-radius : 3px;
         text-align    : center;
         cursor        : pointer;
         padding       : 5px 5px;
@@ -37,9 +38,6 @@
         box-shadow    : none;
         color         : $header_btn_hover_fcolor;
         background    : $header_font_color;
-      }
-      .genres {
-        // width: 120px;
       }
     }
   }

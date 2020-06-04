@@ -10,7 +10,7 @@
         
       - @genres.each do |genre|
         %li
-        = button_to "#{genre.name}ランキング", "/genres/#{genre.id}/each_genre_ranking", method: :get, class: "menu_item genres"
+          = button_to "#{genre.name}ランキング", "/genres/#{genre.id}/each_genre_ranking", method: :get, class: "menu_item genres"
 
   = form_tag('/posts/search', method: :get, class: "form") do
     = text_field_tag :keyword, :'', id:'searching-form', placeholder: 'タイトル名のキーワードを入力！', autocomplete:'off'
