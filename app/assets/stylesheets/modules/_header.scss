@@ -4,7 +4,7 @@
   background-color: $header_btn_hover_fcolor;
   display: flex;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   box-shadow: 2px 2px 3px $box-shadow-color;
   .theme {
     width: calc(100vw - 300px);

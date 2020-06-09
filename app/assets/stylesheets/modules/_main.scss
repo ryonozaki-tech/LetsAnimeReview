@@ -7,6 +7,7 @@
     background-color: cadetblue;
     text-align: center;
     overflow: scroll;
+    z-index: 1;
     .genre_name {
       color: $main-font-color;
       font-size: 25px;
