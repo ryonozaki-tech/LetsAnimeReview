@@ -116,3 +116,26 @@
   border: 1px solid $header_btn_hover_bcolor;
   box-shadow    : none;
 }
+
+@mixin menu_boxes {
+  color: $header_font_color;
+  background-color: $main_bcolor;
+  margin: 0 5px;
+  font-size: 14px;
+  width: 200px;
+  display       : inline-block;
+  border-radius : 3px;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 5px 5px;
+  line-height   : 1em;
+  transition    : .3s;
+  box-shadow    : 2px 2px 3px $box-shadow-color;
+  text-decoration: none;
+}
+
+@mixin menu_boxes_hover {
+  box-shadow    : none;
+  color         : $header_btn_hover_fcolor;
+  background    : $header_font_color;
+}
