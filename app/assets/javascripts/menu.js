@@ -1,14 +1,14 @@
 function menuLoad() {
-  $("#genre_rankings").ready(function() {
-    $(this).find("ul.hidden li").css({visibility: "hidden"});
+  $(".menu_item_genres").ready(function() {
+    $("#genre_rankings").find("ul.hidden li").css({visibility: "hidden"});
   });
 }
 
 function menu() {
-  $("#genre_rankings").hover(function() {
-    $(this).find("ul.hidden li").css({visibility: "visible", display: "none"}).show(600);
+  $(".menu_item_genres").hover(function() {
+    $("#genre_rankings").find("ul.hidden li").css({visibility: "visible", display: "none"}).show(600);
     }, function(){
-    $(this).find("ul.hidden li").css({visibility: "hidden"});
+    $("#genre_rankings").find("ul.hidden li").css({visibility: "hidden"});
   });
 }
 

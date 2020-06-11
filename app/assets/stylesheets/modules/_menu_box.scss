@@ -15,6 +15,7 @@
     ul#rankings {
       display: flex;
       width: calc(100vw - 400px);
+      height: 60px;
       white-space: nowrap;
       // -webkit-overflow-scrolling: touch;
       li {
